@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 public class SuperCoolMod implements ModInitializer {
 	//define blocks and items
-	public static final Block COOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
+	public static final Block COOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(-1f));
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
