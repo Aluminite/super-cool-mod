@@ -1,29 +1,30 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "supercool",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Super Cool Mod",
+  "description": "It's just the coolest, isn't it?",
   "authors": [
-    "Me!"
+    "Aluminite",
+    "Winjiny"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://mrow.party/",
+    "sources": "https://github.com/Aluminite/super-cool-mod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/supercool/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "party.mrow.SuperCoolMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "supercool.mixins.json"
   ],
 
   "depends": {
