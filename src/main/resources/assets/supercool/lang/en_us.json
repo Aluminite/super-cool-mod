@@ -1,3 +1,4 @@
 {
-  "block.supercool.cool_block" : "Cool Block"
+  "block.supercool.cool_block" : "Cool Block",
+  "itemGroup.supercool.general" : "Cool Items"
 }
