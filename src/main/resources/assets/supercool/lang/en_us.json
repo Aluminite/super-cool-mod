@@ -1,4 +1,5 @@
 {
   "block.supercool.cool_block" : "Cool Block",
-  "itemGroup.supercool.general" : "Cool Items"
+  "itemGroup.supercool.general" : "Cool Items",
+  "item.supercool.cool_sword" : "Cool Sword"
 }

@@ -12,12 +12,12 @@ public class CoolToolMaterial implements ToolMaterial {
 
     @Override
     public float getMiningSpeedMultiplier() {
-        return 69F;
+        return Float.MAX_VALUE;
     }
 
     @Override
     public float getAttackDamage() {
-        return 69F;
+        return 0F;
     }
 
     @Override
