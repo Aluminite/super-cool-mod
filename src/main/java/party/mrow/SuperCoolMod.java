@@ -6,9 +6,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
@@ -20,6 +18,9 @@ public class SuperCoolMod implements ModInitializer {
 
 	public static final ItemGroup COOL_GROUP = FabricItemGroupBuilder.build(
 			new Identifier("supercool", "general"), () -> new ItemStack(COOL_BLOCK));
+
+	public static ToolItem COOL_SWORD = new SwordItem(CoolToolMaterial.INSTANCE, 6969, 0F,
+			new Item.Settings().group(COOL_GROUP));
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -34,6 +35,8 @@ public class SuperCoolMod implements ModInitializer {
 		Registry.register(Registry.ITEM,
 				new Identifier("supercool", "cool_block"),
 				new BlockItem(COOL_BLOCK, new FabricItemSettings().group(COOL_GROUP)));
+		Registry.register(Registry.ITEM,
+				new Identifier("supercool", "cool_sword"), COOL_SWORD);
 
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
