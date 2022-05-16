@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.*;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -51,7 +52,7 @@ public class SuperCoolMod implements ModInitializer {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
             if (DUNGEON_CHEST_LOOT_TABLE_ID.equals(id)) {
                 FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-                        .rolls(UniformLootNumberProvider.create(0, 1))
+                        .rolls(BinomialLootNumberProvider.create(1, 0.25f))
                         .with(ItemEntry.builder(COOL_BLOCK_ITEM));
 
                 table.pool(poolBuilder);
