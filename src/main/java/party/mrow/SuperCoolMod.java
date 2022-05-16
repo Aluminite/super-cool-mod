@@ -13,33 +13,33 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class SuperCoolMod implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger("supercool");
+    // This logger is used to write text to the console and the log file.
+    // It is considered best practice to use your mod id as the logger's name.
+    // That way, it's clear which mod wrote info, warnings, and errors.
+    public static final Logger LOGGER = LoggerFactory.getLogger("supercool");
 
-	//define blocks and items
-	public static final Block COOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(-1f));
-	public static final ItemGroup COOL_GROUP = FabricItemGroupBuilder.build(
-			new Identifier("supercool", "general"), () -> new ItemStack(COOL_BLOCK));
-	public static ToolItem COOL_SWORD = new SwordItem(CoolToolMaterial.INSTANCE, Integer.MAX_VALUE, 0F,
-			new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof());
+    //define blocks and items
+    public static final Block COOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(-1f));
+    public static final ItemGroup COOL_GROUP = FabricItemGroupBuilder.build(
+            new Identifier("supercool", "general"), () -> new ItemStack(COOL_BLOCK));
+    public static ToolItem COOL_SWORD = new SwordItem(CoolToolMaterial.INSTANCE, Integer.MAX_VALUE, 0F,
+            new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof());
 
-	@Override
-	public void onInitialize() {
-		//register blocks and items
-		Registry.register(Registry.BLOCK,
-				new Identifier("supercool", "cool_block"), COOL_BLOCK);
-		Registry.register(Registry.ITEM,
-				new Identifier("supercool", "cool_block"),
-				new BlockItem(COOL_BLOCK, new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof()));
-		Registry.register(Registry.ITEM,
-				new Identifier("supercool", "cool_sword"), COOL_SWORD);
+    @Override
+    public void onInitialize() {
+        //register blocks and items
+        Registry.register(Registry.BLOCK,
+                new Identifier("supercool", "cool_block"), COOL_BLOCK);
+        Registry.register(Registry.ITEM,
+                new Identifier("supercool", "cool_block"),
+                new BlockItem(COOL_BLOCK, new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof()));
+        Registry.register(Registry.ITEM,
+                new Identifier("supercool", "cool_sword"), COOL_SWORD);
 
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+        // This code runs as soon as Minecraft is in a mod-load-ready state.
+        // However, some things (like resources) may still be uninitialized.
+        // Proceed with mild caution.
 
-		LOGGER.info("This is a test of the ULTRA OMEGA SUPER COOL MOD!");
-	}
+        LOGGER.info("This is a test of the ULTRA OMEGA SUPER COOL MOD!");
+    }
 }
