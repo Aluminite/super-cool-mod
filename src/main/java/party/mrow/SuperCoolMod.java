@@ -26,7 +26,7 @@ public class SuperCoolMod implements ModInitializer {
     public static final Block COOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(-1f));
     public static final ItemGroup COOL_GROUP = FabricItemGroupBuilder.build(
             new Identifier("supercool", "general"), () -> new ItemStack(COOL_BLOCK));
-    public static final Item COOL_BLOCK_ITEM = new BlockItem(COOL_BLOCK,
+    private static final Item COOL_BLOCK_ITEM = new BlockItem(COOL_BLOCK,
             new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof());
     public static ToolItem COOL_SWORD = new SwordItem(CoolToolMaterial.INSTANCE, Integer.MAX_VALUE, 0F,
             new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof());
@@ -37,8 +37,6 @@ public class SuperCoolMod implements ModInitializer {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
-
-        LOGGER.info("This is a test of the ULTRA OMEGA SUPER COOL MOD!");
 
         // register blocks and items
         Registry.register(Registry.BLOCK,
@@ -58,5 +56,7 @@ public class SuperCoolMod implements ModInitializer {
                 table.pool(poolBuilder);
             }
         });
+
+        LOGGER.info("Super Cool Mod loaded successfully");
     }
 }
