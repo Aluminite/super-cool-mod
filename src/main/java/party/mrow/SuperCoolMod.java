@@ -10,7 +10,6 @@ import net.minecraft.block.Material;
 import net.minecraft.item.*;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -27,7 +26,8 @@ public class SuperCoolMod implements ModInitializer {
     public static final Block COOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(-1f));
     public static final ItemGroup COOL_GROUP = FabricItemGroupBuilder.build(
             new Identifier("supercool", "general"), () -> new ItemStack(COOL_BLOCK));
-    public static final Item COOL_BLOCK_ITEM = new BlockItem(COOL_BLOCK, new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof());
+    public static final Item COOL_BLOCK_ITEM = new BlockItem(COOL_BLOCK,
+            new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof());
     public static ToolItem COOL_SWORD = new SwordItem(CoolToolMaterial.INSTANCE, Integer.MAX_VALUE, 0F,
             new Item.Settings().group(COOL_GROUP).rarity(Rarity.EPIC).fireproof());
     private static final Identifier DUNGEON_CHEST_LOOT_TABLE_ID = new Identifier("minecraft", "chests/simple_dungeon");
