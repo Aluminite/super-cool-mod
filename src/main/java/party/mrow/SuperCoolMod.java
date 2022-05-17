@@ -23,7 +23,8 @@ public class SuperCoolMod implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("supercool");
 
     // define blocks and items
-    public static final Block COOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(-1f));
+    public static final Block COOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL)
+            .hardness(-1f).resistance(Float.MAX_VALUE));
     public static final ItemGroup COOL_GROUP = FabricItemGroupBuilder.build(
             new Identifier("supercool", "general"), () -> new ItemStack(COOL_BLOCK));
     private static final Item COOL_BLOCK_ITEM = new BlockItem(COOL_BLOCK,
